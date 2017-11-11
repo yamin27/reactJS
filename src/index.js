@@ -1,29 +1,36 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
+function Cartoon(props) {
+    return <h1>THis is Component {props.name} and {props.last_name}</h1>
+}
 
-let name = 'yamin'
-let obj = {
-        name : 'sarker',
-        email : 'yaminalam27@gmail.com'
+// class Cartoons extends React.Component{
+//     render(){
+//         return <h1>HEllo {this.props.name}</h1>
+//     }
+// }
+
+class New extends React.Component{
+    render()
+    {
+        return <section>
+            <Cartoon name='Yamin' last_name='Sarker'/>
+            <Cartoon name='aladin' last_name='khan' />
+        </section>
     }
-const element = <h1>welcome to react learning {name}</h1>
 
-let clock = function()
-{
-    return <h3>{new Date().toLocaleTimeString()}</h3>
-}
-function cartoon (name = 'uyamin', show = 'hsagdj') {
-
-    return <div>
-        <h1 class="App">Cartoon name is {name} ans show {show}</h1>
-        <h2>Hello function</h2>
-    </div>
 }
 
-setInterval(function () {
+function Show() {
+
+    return <section>
+    <Cartoon name='Yamin' last_name='Sarker'/>
+        <Cartoon name='aladin' last_name='khan' />
+    </section>
+}
+
     ReactDom.render(
-        clock(),
+      <New />,
         document.getElementById('root')
     );
-}, 1000)
